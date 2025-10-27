@@ -1,0 +1,18 @@
+# Python / Flask
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.ipynb_checkpoints/
+
+# Ambientes Virtuais (CRUCIAL para o seu caso)
+# Ignora a pasta avaliativa_env, não importa onde ela esteja
+avaliativa_env/
+venv/
+env/
+
+# Arquivos de Sistema e IDEs (Opcional, mas recomendado)
+.DS_Store
+.vscode/
+.idea/

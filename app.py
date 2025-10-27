@@ -9,12 +9,23 @@ from flask import Flask
 # Instancia o aplicativo Flask e o nomeia como 'app_devWebIII'
 app_devWebIII = Flask (__name__) 
 
-# Criação da primeira rota (raiz do site)
-@app_devWebIII.route('/')
 def raiz():
     return 'Olá, bem vindos(as)!'
 
 # Execução da aplicação Flask
 app_devWebIII.run()
-#Na aula 01 - aprendemos a criar rotas e fazer sua comunicação com o navegador#
+# Criação de uma rota dinâmica de saudação
+@app_devWebIII.route('/saudacao/<nome>')
+# '<nome>' indica que essa parte da URL será dinâmica e passada como parâmetro para a função
+# Função recebe o parâmetro 'nome' da URL e retorna uma saudação personalizada
+def saudacoes(nome):
+     # Função recebe o parâmetro 'nome' da URL e retorna uma saudação personalizada
+    return f'Olá, {nome} como vai? '
+
+
+# Verifica se o arquivo está sendo executado diretamente (não importado por outro módulo)
+if __name__ == "__main__" : # 
+    # Executa o servidor Flask na porta 8080
+    app_devWebIII.run(port = 8080, debug=True)  
+    # debug=True ativa o modo de depuração, reiniciando o servidor automaticamente ao salvar mudanças
 
