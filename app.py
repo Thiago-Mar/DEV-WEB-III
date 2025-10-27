@@ -8,12 +8,17 @@ from flask import Flask
 
 # Instancia o aplicativo Flask e o nomeia como 'app_devWebIII'
 app_devWebIII = Flask (__name__) 
-
+@app_devWebIII.route("/")
+@app_devWebIII.route("/rota1")
 def raiz():
     return 'Olá, bem vindos(as)!'
 
-# Execução da aplicação Flask
-app_devWebIII.run()
+#Essa rota tem a implementação de TAG HTML#
+@app_devWebIII.route('/rota2')
+def rota2():
+    resposta = "<H3> Página da rota 2, usando conceitos de html <H3>"
+    return resposta
+
 # Criação de uma rota dinâmica de saudação
 @app_devWebIII.route('/saudacao/<nome>')
 # '<nome>' indica que essa parte da URL será dinâmica e passada como parâmetro para a função
