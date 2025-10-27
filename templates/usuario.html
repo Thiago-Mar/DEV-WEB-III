@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Usuário{% endblock %}
+{% block content %}
+    <div class="perfil-user">
+        
+        <h1>Perfil do Usuário: {{ nome }}</h1>
+        
+        <hr>
+        
+        <h2>Detalhes Dinâmicos Recebidos:</h2>
+        
+        <p><strong>Profissão:</strong> {{ dados.profissao }}</p>
+        
+        <p><strong>Disciplina:</strong> {{ dados.disciplina }}</p>
+        
+        <hr>
+        
+        <p>Esta página foi gerada dinamicamente com base nos dados da URL.</p>
+        
+    </div>
+{% endblock %}

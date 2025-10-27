@@ -1,32 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    <!--Estilizando essa página html-->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            background-color: #ffffff;
-        }
-        h1 {
-            color: #000000;
-        }
-        p {
-            color: #9d0202;
-        }
-    </style>
-    <h1>Informações do usuário</h1>
-        <p><strong>Acadêmico:</strong> {{ nome }}</p>
-        <p><strong>Disciplina:</strong> {{ dados.disciplina}}</p>
-        <p><strong>Professor(a):</strong> {{ dados.professor }}</p>
-        <p><strong>Instituição:</strong> {{ dados.instituicao }}</p>
+{% extends "base.html" %}
+
+{% block title %}Contato{% endblock %}
+
+{% block content %}
+<h4>
+     Olá {{ nome }} essa é suas informações de Contato</h1>
+</h4>
         <p><strong>E-mail:</strong> {{ dados.email }}</p>
         <p><strong>Telefone:</strong> {{ dados.telefone }}</p>
     </div>
 </body>
+{% endblock %}

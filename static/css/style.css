@@ -1,0 +1,63 @@
+/* Definições de cores e fontes para as páginas */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8e8e8; /* Cor de fundo principal */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container principal para centralizar o conteúdo */
+.content {
+    background-color: #ffffff;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    min-height: 70vh; /* Garante que o conteúdo tenha uma altura mínima */
+}
+
+/* Estilo do cabeçalho de navegação */
+header nav {
+    background-color: #0056b3; /* Azul escuro */
+    padding: 15px 0;
+    text-align: center;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ffcc00; /* Amarelo no hover */
+}
+
+/* Estilo para títulos */
+h1 {
+    color: #007bff; /* Azul claro */
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+    /* Remove a posição fixed se não quiser que ele flutue */
+}
+
+/* Estilo base para botões e links */
+a {
+    color: #0056b3;
+    text-decoration: none;
+}

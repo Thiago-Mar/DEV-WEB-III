@@ -1,31 +1,12 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-</head>
-<body>
-    <!--Estilizando essa página html-->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 50px;
-            background-color: #ffffff;
-        }
-        h1 {
-            color: #000000;
-        }
-        p {
-            color: #9d0202;
-        }
-    </style>
-    <!--Iniciando a saudação com URL dinâmica-->
+{% extends "base.html" %}
+
+{% block title %}Página Inicial (Index){% endblock %}
+
+{% block content %}
     <h1>Olá {{ nome }}. Seja bem vindo(a)!</h1>
+    
     <p>
-        Essa é uma parte do aprendizado de desenvolvimento
-        para que possamos compreender a utlização de rotas.
-    </p>
-</body>
-</html>
+        Essa é uma parte do aprendizado de desenvolvimento para que possamos compreender a utlização de rotas dinâmicas.
+    </p>
+
+{% endblock %}
