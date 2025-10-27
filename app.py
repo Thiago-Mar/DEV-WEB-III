@@ -4,29 +4,28 @@
 # 4° Período de TSI 
 
 # Importação da classe Flask da biblioteca flask
-from flask import Flask 
+from flask import Flask, render_template
 
 # Instancia o aplicativo Flask e o nomeia como 'app_devWebIII'
 app_devWebIII = Flask (__name__) 
-@app_devWebIII.route("/")
-@app_devWebIII.route("/rota1")
-def raiz():
-    return 'Olá, bem vindos(as)!'
+#Criando uma nova rota raiz como homepage da página, recebendo uma página html estática#
+#Substintuindo também a routa de saudação.#
+@app_devWebIII.route('/index/<id>')
+def pagina_inicial(id):
+    return render_template('index.html', nome=id)
 
-#Essa rota tem a implementação de TAG HTML#
-@app_devWebIII.route('/rota2')
-def rota2():
-    resposta = "<H3> Página da rota 2, usando conceitos de html <H3>"
-    return resposta
-
-# Criação de uma rota dinâmica de saudação
-@app_devWebIII.route('/saudacao/<nome>')
-# '<nome>' indica que essa parte da URL será dinâmica e passada como parâmetro para a função
-# Função recebe o parâmetro 'nome' da URL e retorna uma saudação personalizada
-def saudacoes(nome):
-     # Função recebe o parâmetro 'nome' da URL e retorna uma saudação personalizada
-    return f'Olá, {nome} como vai? '
-
+#Nesta rota substintuindo a rota2, criou-se uma página html para receber as informações transmitidas pelas rotas#
+@app_devWebIII.route('/contato/<id>')
+def contato(id):
+    # Dicionário contendo as informações de contato
+    contato_info = {
+        "disciplina": "Desenvolvimento Web III",
+        "professor": "Profª. Dra. Mariela Tamada",
+        "instituicao": "IFRO - Campus PVZN",
+        "email": "0000@gmail.com", 
+        "telefone": "(69)99999-9999"
+    }
+    return render_template('contato.html', nome=id, dados=contato_info)
 
 # Verifica se o arquivo está sendo executado diretamente (não importado por outro módulo)
 if __name__ == "__main__" : # 
