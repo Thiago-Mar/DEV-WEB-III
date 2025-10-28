@@ -8,6 +8,11 @@
     
 </head>
 <body>
+    <head>
+        <nav>
+            <a href="{{ url_for('logout') }}">Sair (Logout)</a>
+        </nav>
+    </head>
     <div class="content">
         {% block content %}{% endblock %}
     </div>
