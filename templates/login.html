@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial (Index){% endblock %}
+
+{% block content %}
+    <form action="/autenticar">
+        Usuário: <input type="text" name="nome_usuario"><br/><br/>
+        Senha: <input type="password" name="senha"><br/><br/>
+        <button type="submit">Entrar</button>
+    </form>
+{% endblock%}
