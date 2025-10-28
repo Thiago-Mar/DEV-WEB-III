@@ -4,7 +4,7 @@
 # 4° Período de TSI 
 
 # Importação da classe Flask da biblioteca flask
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 # Instancia o aplicativo Flask e o nomeia como 'app_devWebIII'
 app_devWebIII = Flask (__name__) 
@@ -31,6 +31,12 @@ def usuario (nome_usuario, nome_profissao, nome_disciplina):
 @app_devWebIII.route('/login')
 def login():
     return render_template("login.html")
+#Implementando a função de autenticar#
+@app_devWebIII.route("/autenticar", methods=['POST'] ) 
+def autenticar():
+    usuario = request.form.get('nome_usuario')
+    senha = request.form.get('senha')
+    return f"usuario: {usuario} e senha: {senha}"
     
 
 # Verifica se o arquivo está sendo executado diretamente (não importado por outro módulo)
